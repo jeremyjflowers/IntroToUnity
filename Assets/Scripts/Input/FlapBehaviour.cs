@@ -13,6 +13,14 @@ public class FlapBehaviour : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
